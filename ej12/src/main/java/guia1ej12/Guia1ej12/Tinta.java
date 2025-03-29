@@ -40,7 +40,8 @@ public class Tinta {
     }
 
     public boolean haySuficienteTinta(int caracteres){
-        return this.getNivelTinta() >= this.nivelSegunCantCaracteres(caracteres);
+        //return this.getNivelTinta() >= this.nivelSegunCantCaracteres(caracteres);
+        return this.nivelTinta >= this.nivelSegunCantCaracteres(caracteres);
     }
 
     @Override
