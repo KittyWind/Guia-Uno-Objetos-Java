@@ -4,6 +4,7 @@
  */
 
 package guiaej1.Guiaej1;
+import java.time.LocalDate;
 
 /**
  *
@@ -50,7 +51,11 @@ public class Persona {
     }
 
     public int getEdad(){
-        return 2024 - this.anioNacimiento;
+        //obtenemos el año actual
+        LocalDate fechaActual = LocalDate.now();
+        int anioActual = fechaActual.getYear();
+        //calculamos la edad
+        return anioActual - this.anioNacimiento;
     }
 
     public boolean esMayor(int x){
