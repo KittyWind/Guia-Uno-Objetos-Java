@@ -17,13 +17,13 @@ public class Bandeja {
 
     
     public Bandeja() {
-        this.cantHojas = 0;
+        cantHojas = 0;
     }
 
     
 
     public void recargarBandeja(int cant){
-        int aux = this.getCantHojas() + cant;
+        int aux = getCantHojas() + cant;
 
         if (cant < CANT_MIN_HOJAS) {
             System.out.println("error: cantidad negativa, sin cambios en la bandeja de hojas");
@@ -35,12 +35,12 @@ public class Bandeja {
     }
 
     public boolean haySuficientesHojas(int caracteres){
-        return this.getCantHojas() >= (int)caracteres/CANT_CARACTERES_POR_HOJA;
+        return getCantHojas() >= (int)caracteres/CANT_CARACTERES_POR_HOJA;
     }
 
     public void usarHojas(int caracteres){
         //this.setCantHojas(this.getCantHojas() - (int)caracteres/CANT_CARACTERES_POR_HOJA);
-        this.cantHojas -= (int)caracteres/CANT_CARACTERES_POR_HOJA;
+        cantHojas -= (int)caracteres/CANT_CARACTERES_POR_HOJA;
     }
 
     public int getCantHojas() {

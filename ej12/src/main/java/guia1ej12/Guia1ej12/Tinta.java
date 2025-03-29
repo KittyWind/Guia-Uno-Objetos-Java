@@ -14,7 +14,7 @@ public class Tinta {
     private int nivelTinta;
 
     public Tinta() {
-        this.nivelTinta = 100;
+        nivelTinta = 100;
     }
 
     public int getNivelTinta() {
@@ -31,17 +31,17 @@ public class Tinta {
 
     public void usarTinta(int caracteres){
         //this.setNivelTinta(this.getNivelTinta() - this.nivelSegunCantCaracteres(caracteres));
-        this.nivelTinta -= this.nivelSegunCantCaracteres(caracteres);
+        nivelTinta -= nivelSegunCantCaracteres(caracteres);
     }
 
     public void subirNivelTinta(int cant){
         //this.setNivelTinta(this.getNivelTinta() + cant);
-        this.nivelTinta += cant;
+        nivelTinta += cant;
     }
 
     public boolean haySuficienteTinta(int caracteres){
         //return this.getNivelTinta() >= this.nivelSegunCantCaracteres(caracteres);
-        return this.nivelTinta >= this.nivelSegunCantCaracteres(caracteres);
+        return nivelTinta >= nivelSegunCantCaracteres(caracteres);
     }
 
     @Override

@@ -45,7 +45,7 @@ public class Documento {
     }
 
     public int calcularCantCaracteres(){
-        return this.contenido.length() + this.titulo.length() + this.fecha.length(); 
+        return contenido.length() + titulo.length() + fecha.length(); 
     }
 
     @Override

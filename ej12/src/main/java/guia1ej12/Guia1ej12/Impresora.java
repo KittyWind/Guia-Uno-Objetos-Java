@@ -15,9 +15,9 @@ public class Impresora {
     private Tinta tinta;
 
     public Impresora() {
-        this.encendido = false;
-        this.bandeja = new Bandeja();
-        this.tinta = new Tinta();
+        encendido = false;
+        bandeja = new Bandeja();
+        tinta = new Tinta();
     }
 
     public boolean isEncendido() {
@@ -29,30 +29,30 @@ public class Impresora {
     }
 
     public void recargarBandeja(int cant){
-        this.bandeja.recargarBandeja(cant);
+        bandeja.recargarBandeja(cant);
     }
 
     public void subirNivelTinta(int cant){
-        this.tinta.subirNivelTinta(cant);
+        tinta.subirNivelTinta(cant);
     }
 
     public boolean verificarTinta(int caracteres){
-        return this.tinta.haySuficienteTinta(caracteres);
+        return tinta.haySuficienteTinta(caracteres);
     }
 
     public boolean verificarBandeja(int caracteres){
-        return this.bandeja.haySuficientesHojas(caracteres);
+        return bandeja.haySuficientesHojas(caracteres);
     }
 
     public void imprimir(Documento document){
         //esta bien asi? preguntar al profe en clase
-        if(this.encendido){
+        if(encendido){
             if(verificarBandeja(document.calcularCantCaracteres())){
                 if(verificarTinta(document.calcularCantCaracteres())){
                     System.out.println("cantidad de hojas antes de la impresion: " + this.bandeja.getCantHojas());
                     System.out.println("nivel de tinta antes de la impresion: " + this.tinta.getNivelTinta());
-                    this.bandeja.usarHojas(document.calcularCantCaracteres());
-                    this.tinta.usarTinta(document.calcularCantCaracteres());
+                    bandeja.usarHojas(document.calcularCantCaracteres());
+                    tinta.usarTinta(document.calcularCantCaracteres());
                     System.out.println(document.getFecha() + "                " + document.getTitulo());
                     System.out.println(document.getContenido());
                     System.out.println("cantidad de hojas despues de la impresion: " + this.bandeja.getCantHojas());
