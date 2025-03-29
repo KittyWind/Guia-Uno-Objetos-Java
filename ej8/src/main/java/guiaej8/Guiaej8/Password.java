@@ -10,7 +10,8 @@ package guiaej8.Guiaej8;
  * @author kitty
  */
 public class Password {
-
+    private final int LONGITUD_FUERTE = 8;
+    private final int LONGITUD_MINIMA = 6;
     private String password;
 
     public Password(String password) {
@@ -18,12 +19,12 @@ public class Password {
     }
     
     public boolean esFuerte(){
-        return this.password.length() >= 8;
+        return this.password.length() >= LONGITUD_FUERTE;
     }
 
     public boolean nuevoValor(String password){
         boolean exito = false;
-        if (this.password.length() >= 6){
+        if (this.password.length() >= LONGITUD_MINIMA){
             exito = true;
             this.password = password;
         }
