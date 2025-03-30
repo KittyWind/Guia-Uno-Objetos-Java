@@ -10,5 +10,5 @@ package guiaej13.Guiaej13;
  * @author kitty
  */
 public enum EntidadFinanciera {
-
+    VISA,MASTERCARD,MAESTRO;
 }
