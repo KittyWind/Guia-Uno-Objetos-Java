@@ -10,5 +10,77 @@ package guiaej13.Guiaej13;
  * @author kitty
  */
 public class TarjetaDeCredito {
+    private String numero;
+    private EntidadFinanciera entidadFinanciera;
+    private Titular titular;
+    private double saldo;
+    private String entidadBancaria;
 
+    public TarjetaDeCredito(String numero, EntidadFinanciera entidadFinanciera, Titular titular, double saldo, String entidadBancaria) {
+        this.numero = numero;
+        this.entidadFinanciera = entidadFinanciera;
+        this.titular = titular;
+        this.saldo = saldo;
+        this.entidadBancaria = entidadBancaria;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public EntidadFinanciera getEntidadFinanciera() {
+        return entidadFinanciera;
+    }
+
+    public void setEntidadFinanciera(EntidadFinanciera entidadFinanciera) {
+        this.entidadFinanciera = entidadFinanciera;
+    }
+
+    public Titular getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Titular titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public String getEntidadBancaria() {
+        return entidadBancaria;
+    }
+
+    public void setEntidadBancaria(String entidadBancaria) {
+        this.entidadBancaria = entidadBancaria;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("TarjetaDeCredito{");
+        sb.append("numero=").append(numero);
+        sb.append(", entidadFinanciera=").append(entidadFinanciera);
+        sb.append(", titular=").append(titular);
+        sb.append(", saldo=").append(saldo);
+        sb.append(", entidadBancaria=").append(entidadBancaria);
+        sb.append('}');
+        return sb.toString();
+    }
+    public void cargarSaldo(double monto) {
+        if (monto > 0) {
+            this.saldo += monto;
+        } else {
+            System.out.println("El monto a cargar debe ser positivo.");
+        }
+    }
 }
