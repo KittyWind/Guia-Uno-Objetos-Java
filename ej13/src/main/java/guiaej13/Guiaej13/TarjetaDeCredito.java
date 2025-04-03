@@ -64,6 +64,10 @@ public class TarjetaDeCredito {
         this.entidadBancaria = entidadBancaria;
     }
 
+    public boolean tieneSaldoSuficiente(double montoTotal){
+        return saldo >= montoTotal;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,11 +80,10 @@ public class TarjetaDeCredito {
         sb.append('}');
         return sb.toString();
     }
-    public void cargarSaldo(double monto) {
-        if (monto > 0) {
-            this.saldo += monto;
-        } else {
-            System.out.println("El monto a cargar debe ser positivo.");
+    
+    public void descontarSueldo(double monto){
+        if (monto > 0){
+            saldo -= monto;
         }
     }
 }
